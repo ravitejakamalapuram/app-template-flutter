@@ -1,0 +1,17 @@
+{
+  "appName": "TODO: App Name",
+  "appType": "flutter-app",
+  "repoName": "TODO: repo-name",
+  "description": "TODO: one-sentence description of what this app does.",
+  "modules": [
+    {
+      "name": "TODO: App Name (Flutter Android App)",
+      "type": "flutter-app",
+      "path": ".",
+      "status": "unpublished",
+      "storeId": "TODO",
+      "buildScript": "flutter build appbundle --release",
+      "artifactPath": "build/app/outputs/bundle/release/app-release.aab"
+    }
+  ]
+}

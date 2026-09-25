@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/ravitejakamalapuram/release-platform/main/schema/release.schema.json
+# Flutter app on Google Play. Flutter needs a custom build command;
+# VERSION_NAME / VERSION_CODE are exported for it.
+# Copied from release-platform's examples/android-only.release.yaml (app-factory ADR
+# decisions/0001-app-factory.md, B5) and given a `listing:` pointing at the fastlane
+# directory below.
+app: TODO-repo-name
+test: flutter test
+targets:
+  - type: android
+    package: TODO.set.the.android.applicationId   # no hyphens, e.g. com.ravitejakamalapuram.appname
+    flutter: '3.24.5'
+    java: '17'
+    build: flutter build appbundle --release --build-name "$VERSION_NAME" --build-number "$VERSION_CODE"
+    aab: build/app/outputs/bundle/release/app-release.aab
+    ci_build: flutter build apk --debug      # PR checks (app-ci.yml) have no signing secrets
+    track: internal
+    release_notes: CHANGELOG.md
+    listing: fastlane/metadata/android/en-US

@@ -1,0 +1,14 @@
+# Flutter / Dart (filled in once `flutter create .` replaces the placeholder)
+.dart_tool/
+.packages
+build/
+*.iml
+
+# Android
+*.jks
+*.keystore
+local.properties
+
+# macOS / editors
+.DS_Store
+.idea/
