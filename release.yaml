@@ -16,4 +16,4 @@ targets:
     ci_build: flutter build apk --debug      # PR checks (app-ci.yml) have no signing secrets
     track: internal
     release_notes: CHANGELOG.md
-    listing: fastlane/metadata/android/en-US
+    listing: fastlane/metadata/android

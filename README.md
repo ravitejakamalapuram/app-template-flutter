@@ -25,11 +25,13 @@ reconsider the template itself (see the ADR's "Consequences" section).
   `release-platform`'s `templates/ci-caller.yml` and `templates/release-caller.yml`.
   They only call `release-platform`'s reusable workflows and carry no app-specific
   logic, by design: see each file's own header comment before editing it.
-- `fastlane/metadata/android/en-US/` — the Play Store listing text (`release.yaml`'s
-  `listing:`), read by `release-platform`'s `listing.yml`. Fill in `title.txt`,
+- `fastlane/metadata/android/` — the Play Store listing (`release.yaml`'s `listing:`
+  points at this directory, one `<locale>/` folder per language), read by
+  `release-platform`'s `listing.yml`. Fill in `en-US/title.txt`,
   `short_description.txt` and `full_description.txt` before the app's first listing
-  sync; add an `images/` directory (icon, feature graphic, phone screenshots) alongside
-  them per fastlane's own layout when those assets exist.
+  sync, and replace the two placeholder `en-US/images/phoneScreenshots/` images with
+  real ones (Play needs 2 to 8); add an icon and feature graphic under `images/` when
+  those assets exist.
 - `CHANGELOG.md` — `release.yaml`'s `release_notes:` source; its first section becomes
   the Play "What's new" text on release.
 - `app-metadata.json` — the shape `scripts/gen-products.mjs` (company-brain) reads to
